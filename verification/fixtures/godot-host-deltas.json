@@ -1,0 +1,206 @@
+{
+  "schema": 1,
+  "fixtureRecords": 5610,
+  "changedRecords": 8,
+  "indices": [
+    2624,
+    2625,
+    2626,
+    2627,
+    2628,
+    2629,
+    2630,
+    2631
+  ],
+  "reason": "Godot String cannot faithfully represent embedded U+0000 across the supported engine floor and current stable. Text wire inputs containing NUL are explicitly rejected before engine conversion; use native byte arrays or PackedByteArray to encode binary NUL. No matrix or error result is silently rewritten.",
+  "observations": {
+    "4.3": "String.chr(0) has length 0; built-in JSON removes escaped NUL and emits a Unicode warning.",
+    "4.7.2": "String.chr(0) and built-in JSON replace NUL with U+FFFD and emit Unicode warnings."
+  },
+  "deltas": [
+    {
+      "index": 2624,
+      "request": {
+        "text": "\ud834\udd1e\ud801\udc370\u0000\u007f",
+        "options": {
+          "errorCorrectionLevel": "L",
+          "optimizeSegments": true
+        }
+      },
+      "historicalExpected": {
+        "version": 1,
+        "ecc": "L",
+        "mask": 0,
+        "data": "40bf09d849ef09090b730007f0ec11ec11ec11",
+        "codewords": "40bf09d849ef09090b730007f0ec11ec11ec11a9673daee13076",
+        "matrixHash": "eec2a50062ff6fa7979e324c69f9f423fc4e7e6966543cc4bc69edb4ff01db9e"
+      },
+      "expected": {
+        "error": "SpecQRError",
+        "isSpecQRError": true,
+        "code": "INVALID_INPUT"
+      }
+    },
+    {
+      "index": 2625,
+      "request": {
+        "text": "\ud834\udd1e\ud801\udc370\u0000\u007f",
+        "options": {
+          "errorCorrectionLevel": "L",
+          "optimizeSegments": false
+        }
+      },
+      "historicalExpected": {
+        "version": 1,
+        "ecc": "L",
+        "mask": 0,
+        "data": "40bf09d849ef09090b730007f0ec11ec11ec11",
+        "codewords": "40bf09d849ef09090b730007f0ec11ec11ec11a9673daee13076",
+        "matrixHash": "eec2a50062ff6fa7979e324c69f9f423fc4e7e6966543cc4bc69edb4ff01db9e"
+      },
+      "expected": {
+        "error": "SpecQRError",
+        "isSpecQRError": true,
+        "code": "INVALID_INPUT"
+      }
+    },
+    {
+      "index": 2626,
+      "request": {
+        "text": "\ud834\udd1e\ud801\udc370\u0000\u007f",
+        "options": {
+          "errorCorrectionLevel": "M",
+          "optimizeSegments": true
+        }
+      },
+      "historicalExpected": {
+        "version": 1,
+        "ecc": "M",
+        "mask": 2,
+        "data": "40bf09d849ef09090b730007f0ec11ec",
+        "codewords": "40bf09d849ef09090b730007f0ec11ec494dd0eb7a77a329f05e",
+        "matrixHash": "03e3c3346f7ee56d779511277030dd5762b2c9269fb51f55f5e71846c081214a"
+      },
+      "expected": {
+        "error": "SpecQRError",
+        "isSpecQRError": true,
+        "code": "INVALID_INPUT"
+      }
+    },
+    {
+      "index": 2627,
+      "request": {
+        "text": "\ud834\udd1e\ud801\udc370\u0000\u007f",
+        "options": {
+          "errorCorrectionLevel": "M",
+          "optimizeSegments": false
+        }
+      },
+      "historicalExpected": {
+        "version": 1,
+        "ecc": "M",
+        "mask": 2,
+        "data": "40bf09d849ef09090b730007f0ec11ec",
+        "codewords": "40bf09d849ef09090b730007f0ec11ec494dd0eb7a77a329f05e",
+        "matrixHash": "03e3c3346f7ee56d779511277030dd5762b2c9269fb51f55f5e71846c081214a"
+      },
+      "expected": {
+        "error": "SpecQRError",
+        "isSpecQRError": true,
+        "code": "INVALID_INPUT"
+      }
+    },
+    {
+      "index": 2628,
+      "request": {
+        "text": "\ud834\udd1e\ud801\udc370\u0000\u007f",
+        "options": {
+          "errorCorrectionLevel": "Q",
+          "optimizeSegments": true
+        }
+      },
+      "historicalExpected": {
+        "version": 1,
+        "ecc": "Q",
+        "mask": 0,
+        "data": "40bf09d849ef09090b730007f0",
+        "codewords": "40bf09d849ef09090b730007f08eb43ad37f5fa0ae4613b77169",
+        "matrixHash": "16a8aba7a6f578b3eafc84c17e577ee6c381b7024156978df8da3ee04632e5b2"
+      },
+      "expected": {
+        "error": "SpecQRError",
+        "isSpecQRError": true,
+        "code": "INVALID_INPUT"
+      }
+    },
+    {
+      "index": 2629,
+      "request": {
+        "text": "\ud834\udd1e\ud801\udc370\u0000\u007f",
+        "options": {
+          "errorCorrectionLevel": "Q",
+          "optimizeSegments": false
+        }
+      },
+      "historicalExpected": {
+        "version": 1,
+        "ecc": "Q",
+        "mask": 0,
+        "data": "40bf09d849ef09090b730007f0",
+        "codewords": "40bf09d849ef09090b730007f08eb43ad37f5fa0ae4613b77169",
+        "matrixHash": "16a8aba7a6f578b3eafc84c17e577ee6c381b7024156978df8da3ee04632e5b2"
+      },
+      "expected": {
+        "error": "SpecQRError",
+        "isSpecQRError": true,
+        "code": "INVALID_INPUT"
+      }
+    },
+    {
+      "index": 2630,
+      "request": {
+        "text": "\ud834\udd1e\ud801\udc370\u0000\u007f",
+        "options": {
+          "errorCorrectionLevel": "H",
+          "optimizeSegments": true
+        }
+      },
+      "historicalExpected": {
+        "version": 2,
+        "ecc": "H",
+        "mask": 7,
+        "data": "40bf09d849ef09090b730007f0ec11ec",
+        "codewords": "40bf09d849ef09090b730007f0ec11eca4cc055737a1b282cd20f62de2e4c1acc9af2cd1e2bb639a1a9d761d",
+        "matrixHash": "cba809164d937dcbfeb4baeb5b477ae7a1bf42af5cbe824b1129e86f50196a55"
+      },
+      "expected": {
+        "error": "SpecQRError",
+        "isSpecQRError": true,
+        "code": "INVALID_INPUT"
+      }
+    },
+    {
+      "index": 2631,
+      "request": {
+        "text": "\ud834\udd1e\ud801\udc370\u0000\u007f",
+        "options": {
+          "errorCorrectionLevel": "H",
+          "optimizeSegments": false
+        }
+      },
+      "historicalExpected": {
+        "version": 2,
+        "ecc": "H",
+        "mask": 7,
+        "data": "40bf09d849ef09090b730007f0ec11ec",
+        "codewords": "40bf09d849ef09090b730007f0ec11eca4cc055737a1b282cd20f62de2e4c1acc9af2cd1e2bb639a1a9d761d",
+        "matrixHash": "cba809164d937dcbfeb4baeb5b477ae7a1bf42af5cbe824b1129e86f50196a55"
+      },
+      "expected": {
+        "error": "SpecQRError",
+        "isSpecQRError": true,
+        "code": "INVALID_INPUT"
+      }
+    }
+  ]
+}

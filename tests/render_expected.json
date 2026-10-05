@@ -1,0 +1,148 @@
+{
+   "cases" : [
+      {
+         "options" : {
+            "margin" : 0,
+            "scale" : 1
+         },
+         "pattern" : 0,
+         "pixelsSha256" : "3a122999f0c8cef129cb9b70c4a6787ba36f01561c471bb7665d6e2b9494e68e",
+         "pixelsSize" : 1764,
+         "pngSha256" : "e8530802c27f76aee77e94293353d798c9861d75c3b1bee0fe837ecef05bb616",
+         "pngSize" : 1853,
+         "pngUrlSha256" : "024d2807a797df103a802b3e464cfee49b9581c21e9f52c1492b0c3bda57aa1b",
+         "size" : 21,
+         "svgSha256" : "c9a1eb6a23c5c98ed5ef6a0072a66079ddea64d1af7adf08c9b89ce62f0be5c9",
+         "svgSize" : 3060,
+         "svgUrlSha256" : "e33530f0d1d1ba9d033b1f181d06ba2934ae3a546025c8f9a1b2391b83afa535",
+         "width" : 21
+      },
+      {
+         "options" : {},
+         "pattern" : 1,
+         "pixelsSha256" : "f11802cc45972a14200196d5664ecd0ec2359582d2141ab42818d6766874bab2",
+         "pixelsSize" : 215296,
+         "pngSha256" : "e9ccaeaef5bb4ecc77227d72bb75b6cb0022afe2f03f61c23e1e6d3b70d423ef",
+         "pngSize" : 215611,
+         "pngUrlSha256" : "5aaf0dc8d0202a360eefbe24dfe15645973ad584e7410cd45ab4c640704b5b8c",
+         "size" : 21,
+         "svgSha256" : "0d0d86d13ab77ca54e124c7ada9c464de39d256488324fd36939b74bef9074fd",
+         "svgSize" : 3224,
+         "svgUrlSha256" : "6f4492dd81fad9e18179a57a780449aa4752b72c652e298effe86f37d6c42eb0",
+         "width" : 232
+      },
+      {
+         "options" : {
+            "background" : "transparent",
+            "foreground" : "#1234",
+            "margin" : 1,
+            "scale" : 2
+         },
+         "pattern" : 2,
+         "pixelsSha256" : "45394a03b49cfe134eeee452e90e3ee2f86399f5d098d26a21f9b78e1463d315",
+         "pixelsSize" : 8464,
+         "pngSha256" : "b7a6073ec1a4ae68c827f417597b8cc58b9e2a395aed0c4187cee25d3d3dff08",
+         "pngSize" : 8578,
+         "pngUrlSha256" : "2a74f4483627558a1f720f821b755c794818d8ecca45618aad33b998666fa450",
+         "size" : 21,
+         "svgSha256" : "474ec9f8aaf10c93add2400aaf46fa203fd1a6e87a866d40dcfefa6634dfc646",
+         "svgSize" : 736,
+         "svgUrlSha256" : "a9b705dfe534ad10f2da95d4ac4a6ef06af7094b2452962993feb7597bf8462b",
+         "width" : 46
+      },
+      {
+         "options" : {
+            "background" : "#89abcdef",
+            "foreground" : "#01234567",
+            "margin" : 3,
+            "scale" : 3
+         },
+         "pattern" : 0,
+         "pixelsSha256" : "0b730602c8b342fe7566cd13ce1d55b5d00d53a814c0d86bac0905f278b6346b",
+         "pixelsSize" : 34596,
+         "pngSha256" : "ae0dde6be2a9a87fe5a605bb179a8870bf76d0047374bc9e8f26e45fcfbfc59e",
+         "pngSize" : 34757,
+         "pngUrlSha256" : "742e0c0b4d7d41a6d1c5e012353a44b9803f52d3ff6d790416dcbf1240ea13dd",
+         "size" : 25,
+         "svgSha256" : "15d508fd98f38b3b190264ffd9c0bce1715719237f14483807a165df470ad3ff",
+         "svgSize" : 4536,
+         "svgUrlSha256" : "b83f218023ee5ae4f9444951fbfcc732fa288af42e099d7a7b2c6893e566a816",
+         "width" : 93
+      },
+      {
+         "options" : {
+            "margin" : 4,
+            "scale" : 1
+         },
+         "pattern" : 1,
+         "pixelsSha256" : "2f3ec449ec5562c5d0b81e4e8a111df6ffd3076220c98e28806e40819135190f",
+         "pixelsSize" : 136900,
+         "pngSha256" : "ed1dc1100e485c86e501f32658a82b1d5ce69b11195c9bd3040a1b65467c1b02",
+         "pngSize" : 137163,
+         "pngUrlSha256" : "bbd28795c1bf8aaa1e15a1ac1ff9cc27ddedf3bb600a9ce7d632786b39a65d2f",
+         "size" : 177,
+         "svgSha256" : "61cd3c080fdfd926603447e589db6d5baf40f78e0cc241d72f4fa25bd5187ad8",
+         "svgSize" : 211622,
+         "svgUrlSha256" : "c3052f311f21914fc12a8ed5539e1a4082955826a015156fea1d689cc09888bd",
+         "width" : 185
+      },
+      {
+         "options" : {
+            "background" : "black",
+            "foreground" : "WHITE",
+            "margin" : 0,
+            "scale" : 2
+         },
+         "pattern" : 2,
+         "pixelsSha256" : "5edec1c69f431ac200a3c983f41d7495c5aa5025195f77a406797d0611c02936",
+         "pixelsSize" : 501264,
+         "pngSha256" : "c47dc8f8026084ed112756004512d608222ae99e279fad530607015c9b736777",
+         "pngSize" : 501721,
+         "pngUrlSha256" : "434e4f635591252e59047a2e945d0bda6976e362e52bf3bd07ffe75c4a2a6db3",
+         "size" : 177,
+         "svgSha256" : "09c3b04784feb048cc3328a3b783de424c5de2d5c6c5370c373a68608cc75c04",
+         "svgSize" : 5604,
+         "svgUrlSha256" : "d44d5a28794f889afe6a808b726410d097085bea0ffcc1440fb0eaafddfe1b77",
+         "width" : 354
+      },
+      {
+         "options" : {
+            "background" : "#def",
+            "foreground" : "#abc",
+            "margin" : 0,
+            "scale" : 3
+         },
+         "pattern" : 0,
+         "pixelsSha256" : "e0051c34324eb27fbfe6a626d1c987cf13bb0b6c30fc0cae74d39b11afe16be5",
+         "pixelsSize" : 15876,
+         "pngSha256" : "d4f087f5a6bf688a617f1a33e7918044e50bea86dd6928e72b5502ac63699fe0",
+         "pngSize" : 16007,
+         "pngUrlSha256" : "1ceb2628b75e13354c28676227a81b779a6335c7fd113ae5f654935be5e48b54",
+         "size" : 21,
+         "svgSha256" : "24f882151e4caec5644046b23477a0746554ebd940bdfe32e21458e2276b6f85",
+         "svgSize" : 3180,
+         "svgUrlSha256" : "7c67c43cf08cb14ec3b4250d50d93cc72064fdfd572dbebdf69511f12ccb1d35",
+         "width" : 63
+      },
+      {
+         "options" : {
+            "background" : "#fefefe",
+            "foreground" : "#010101",
+            "margin" : 3,
+            "scale" : 5
+         },
+         "pattern" : 1,
+         "pixelsSha256" : "a9e7f9e8554b6e344ea5dfea42723464d3a2819d77ecc71b72e10a00bee0c255",
+         "pixelsSize" : 72900,
+         "pngSha256" : "5177c41a0a4b5e961099388d510d6f04ff00fdd6156e498371c21eb7785b8d5c",
+         "pngSize" : 73108,
+         "pngUrlSha256" : "f676ffb7ae4cefab61c2dc179678aa0fb938caeb8c3fe6b0b7cf5aca77b3e608",
+         "size" : 21,
+         "svgSha256" : "56adea24bfb82bcb5c16d2764c7608074b43ecc3a8966ceed73d58121408553b",
+         "svgSize" : 3071,
+         "svgUrlSha256" : "be9f18d7bd35c82b060aaa2dc7dfd5d223891a7522b7c20fc3e1a7e6659057c1",
+         "width" : 135
+      }
+   ],
+   "provenance" : "Generated from verified dependency-free Perl renderer using synthetic matrices"
+}

@@ -1,0 +1,6 @@
+.godot/
+*.gd.uid
+__pycache__/
+*.pyc
+.tools/
+.evidence/

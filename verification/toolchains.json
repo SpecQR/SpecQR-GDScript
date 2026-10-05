@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "profile": "Linux x86-64 official standard GDScript build",
+  "reviewedOn": "2026-10-05",
+  "floor": "4.3",
+  "currentStable": "4.7.2",
+  "releases": {
+    "4.3": {
+      "version": "4.3",
+      "releaseUrl": "https://github.com/godotengine/godot-builds/releases/tag/4.3-stable",
+      "downloadUrl": "https://github.com/godotengine/godot-builds/releases/download/4.3-stable/Godot_v4.3-stable_linux.x86_64.zip",
+      "officialChecksumUrl": "https://github.com/godotengine/godot-builds/releases/download/4.3-stable/SHA512-SUMS.txt",
+      "officialSha512": "fd52bb4ba8acc30ca5accd1c566d470ad7282f891ccc0995dfafabcf92bcf76280ce182bf9d80ebd885f3ed2165d01e1fc3f2928436b15498dfbd98656c2a45a",
+      "archiveSha256": "7de56444b130b10af84d19c7e0cf63cf9e9937ee4ba94364c3b7dd114253ca21",
+      "binarySha256": "6e100966e49c69a2d4c163673f606eec1bafe54b4c6170eec5a6a2ee50756ddd",
+      "binaryBytes": 111880592,
+      "status": "verified",
+      "checksumManifestSha256": "5e6a1e272058c4532732a6e0003df33e0bd2ba2ce1ecc402e129b1abebf32dc2"
+    },
+    "4.7.2": {
+      "version": "4.7.2",
+      "releaseUrl": "https://github.com/godotengine/godot-builds/releases/tag/4.7.2-stable",
+      "downloadUrl": "https://github.com/godotengine/godot-builds/releases/download/4.7.2-stable/Godot_v4.7.2-stable_linux.x86_64.zip",
+      "officialChecksumUrl": "https://github.com/godotengine/godot-builds/releases/download/4.7.2-stable/SHA512-SUMS.txt",
+      "officialSha512": "9aa00f7a605200940bce3027a567b782f49bd8e940dd06ae9e987bd65aee1b1467edd56ed84fcdcbdd44354bf613bdbb4e5d2913e925850368e150c59ed54c65",
+      "archiveSha256": "cadd3204e728a35d3f13adb7fd0d7902636b79f6b95c40c265eb73b6c35329e4",
+      "binarySha256": "8d106cbe6144c2dc7e881d61d2429c1a8a76e6b22ef48bd5e48dcf934953f71e",
+      "binaryBytes": 146414384,
+      "status": "verified",
+      "checksumManifestSha256": "b8bdff6704f833e7a021df16ec08e1478edd5a285c1f894929b91a7f74a5c7c0"
+    }
+  }
+}

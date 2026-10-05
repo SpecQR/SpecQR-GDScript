@@ -1,0 +1,13 @@
+; SpecQR GDScript: native dependency-free QR library and headless verification.
+config_version=5
+
+[application]
+config/name="SpecQR GDScript"
+config/features=PackedStringArray("4.3", "GL Compatibility")
+
+[rendering]
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+
+[debug]
+file_logging/enable_file_logging=false

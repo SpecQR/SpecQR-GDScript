@@ -1,0 +1,188 @@
+{
+  "oldNativeAssertions": 326,
+  "currentNativeAssertions": 303,
+  "netDifference": -23,
+  "oldNativeInputsMovedToIndependentOracle": 24,
+  "extraReplacementNegative": "https:// empty authority rejection",
+  "restoredInputsExpectedPositive": 23,
+  "movedInputsStillRejected": 1,
+  "oldNativeTestSha256": "f5fec63d2d1a21c5b89b5ab568ca8112e3f6b5a4855b1e251b9068954c8d582b",
+  "currentNativeTestSha256": "7e31273f4c4288f4c4e4348a6c1aeb590a498454c1c1b502884a93af44b1e7a9",
+  "oracleFixtureSha256": "5b137c40a9553e49d6326f86af7c43c81eb3401dca6d85c4f0f1528aaa56ebfa",
+  "oracleGeneratorSha256": "692ba9e530d06b6f6f4c68a5daccbf094315f4bf5a55f52db5e66883a247affc",
+  "oracleSourceTreeSha256": "ee30b51e2409692f2f8020287a50cea5d80c2ceedb78f7c2a5a30e6d74199e75",
+  "movedChecks": [
+    {
+      "oldLabel": "rejected host 0x",
+      "input": "https://0x/01/09506000134352",
+      "newCaseId": "previous-native-00",
+      "newExpected": "https://0.0.0.0/01/09506000134352",
+      "change": "restored current-TypeScript acceptance"
+    },
+    {
+      "oldLabel": "rejected host 0X",
+      "input": "https://0X/01/09506000134352",
+      "newCaseId": "previous-native-01",
+      "newExpected": "https://0.0.0.0/01/09506000134352",
+      "change": "restored current-TypeScript acceptance"
+    },
+    {
+      "oldLabel": "rejected host 1.0x",
+      "input": "https://1.0x/01/09506000134352",
+      "newCaseId": "previous-native-02",
+      "newExpected": "https://1.0.0.0/01/09506000134352",
+      "change": "restored current-TypeScript acceptance"
+    },
+    {
+      "oldLabel": "rejected host 0x.",
+      "input": "https://0x./01/09506000134352",
+      "newCaseId": "previous-native-03",
+      "newExpected": "https://0.0.0.0/01/09506000134352",
+      "change": "restored current-TypeScript acceptance"
+    },
+    {
+      "oldLabel": "rejected host 1.0X",
+      "input": "https://1.0X/01/09506000134352",
+      "newCaseId": "previous-native-04",
+      "newExpected": "https://1.0.0.0/01/09506000134352",
+      "change": "restored current-TypeScript acceptance"
+    },
+    {
+      "oldLabel": "rejected host 1.2.3.0x",
+      "input": "https://1.2.3.0x/01/09506000134352",
+      "newCaseId": "previous-native-05",
+      "newExpected": "https://1.2.3.0/01/09506000134352",
+      "change": "restored current-TypeScript acceptance"
+    },
+    {
+      "oldLabel": "rejected host 0x7f000001",
+      "input": "https://0x7f000001/01/09506000134352",
+      "newCaseId": "previous-native-06",
+      "newExpected": "https://127.0.0.1/01/09506000134352",
+      "change": "restored current-TypeScript acceptance"
+    },
+    {
+      "oldLabel": "rejected host 0177.0.0.1",
+      "input": "https://0177.0.0.1/01/09506000134352",
+      "newCaseId": "previous-native-07",
+      "newExpected": "https://127.0.0.1/01/09506000134352",
+      "change": "restored current-TypeScript acceptance"
+    },
+    {
+      "oldLabel": "rejected host 127.1",
+      "input": "https://127.1/01/09506000134352",
+      "newCaseId": "previous-native-08",
+      "newExpected": "https://127.0.0.1/01/09506000134352",
+      "change": "restored current-TypeScript acceptance"
+    },
+    {
+      "oldLabel": "rejected host 2130706433",
+      "input": "https://2130706433/01/09506000134352",
+      "newCaseId": "previous-native-09",
+      "newExpected": "https://127.0.0.1/01/09506000134352",
+      "change": "restored current-TypeScript acceptance"
+    },
+    {
+      "oldLabel": "rejected host 127.0.0.01",
+      "input": "https://127.0.0.01/01/09506000134352",
+      "newCaseId": "previous-native-10",
+      "newExpected": "https://127.0.0.1/01/09506000134352",
+      "change": "restored current-TypeScript acceptance"
+    },
+    {
+      "oldLabel": "rejected host 1.2.3.4.",
+      "input": "https://1.2.3.4./01/09506000134352",
+      "newCaseId": "previous-native-11",
+      "newExpected": "https://1.2.3.4/01/09506000134352",
+      "change": "restored current-TypeScript acceptance"
+    },
+    {
+      "oldLabel": "rejected host user:password@example.com",
+      "input": "https://user:password@example.com/01/09506000134352",
+      "newCaseId": "previous-native-12",
+      "newExpected": "https://user:password@example.com/01/09506000134352",
+      "change": "restored current-TypeScript acceptance"
+    },
+    {
+      "oldLabel": "rejected host user@example.com",
+      "input": "https://user@example.com/01/09506000134352",
+      "newCaseId": "previous-native-13",
+      "newExpected": "https://user@example.com/01/09506000134352",
+      "change": "restored current-TypeScript acceptance"
+    },
+    {
+      "oldLabel": "rejected host %65xample.com",
+      "input": "https://%65xample.com/01/09506000134352",
+      "newCaseId": "previous-native-14",
+      "newExpected": "https://example.com/01/09506000134352",
+      "change": "restored current-TypeScript acceptance"
+    },
+    {
+      "oldLabel": "rejected host a..example",
+      "input": "https://a..example/01/09506000134352",
+      "newCaseId": "previous-native-15",
+      "newExpected": "https://a..example/01/09506000134352",
+      "change": "restored current-TypeScript acceptance"
+    },
+    {
+      "oldLabel": "rejected host -bad.example",
+      "input": "https://-bad.example/01/09506000134352",
+      "newCaseId": "previous-native-16",
+      "newExpected": "https://-bad.example/01/09506000134352",
+      "change": "restored current-TypeScript acceptance"
+    },
+    {
+      "oldLabel": "rejected host bad-.example",
+      "input": "https://bad-.example/01/09506000134352",
+      "newCaseId": "previous-native-17",
+      "newExpected": "https://bad-.example/01/09506000134352",
+      "change": "restored current-TypeScript acceptance"
+    },
+    {
+      "oldLabel": "rejected host bad_name.example",
+      "input": "https://bad_name.example/01/09506000134352",
+      "newCaseId": "previous-native-18",
+      "newExpected": "https://bad_name.example/01/09506000134352",
+      "change": "restored current-TypeScript acceptance"
+    },
+    {
+      "oldLabel": "rejected host ",
+      "input": "https:///01/09506000134352",
+      "newCaseId": "previous-native-19",
+      "newExpected": {
+        "throws": {
+          "code": "INVALID_GS1"
+        }
+      },
+      "change": "repair changes authority; missing primary still rejected"
+    },
+    {
+      "oldLabel": "rejected port ",
+      "input": "https://example.com:/01/09506000134352",
+      "newCaseId": "previous-native-20",
+      "newExpected": "https://example.com/01/09506000134352",
+      "change": "restored current-TypeScript acceptance"
+    },
+    {
+      "oldLabel": "rejected URI",
+      "input": "https://example.com\\x/01/09506000134352",
+      "newCaseId": "previous-native-21",
+      "newExpected": "https://example.com/x/01/09506000134352",
+      "change": "restored current-TypeScript acceptance"
+    },
+    {
+      "oldLabel": "rejected URI",
+      "input": " https://example.com/01/09506000134352",
+      "newCaseId": "previous-native-22",
+      "newExpected": "https://example.com/01/09506000134352",
+      "change": "restored current-TypeScript acceptance"
+    },
+    {
+      "oldLabel": "rejected URI",
+      "input": "https://example.com/01/09506000134352?x=raw space",
+      "newCaseId": "previous-native-23",
+      "newExpected": "https://example.com/01/09506000134352?x=raw+space",
+      "change": "restored current-TypeScript acceptance"
+    }
+  ]
+}
