@@ -30,7 +30,7 @@ def main():
   harness=run([sys.executable,ROOT/'script/test_harness.py'],'harness-failure-controls');require(re.search(rb'Ran 35 tests in ',harness) and harness.rstrip().endswith(b'OK'),'Harness control cardinality changed');report['harnessControls']=35
   unit=strict_json(run(godot(ROOT/'tests/run_all.gd'),'native-unit'))
   require(unit.get('status')=='passed' and set(x['name'] for x in unit['groups'])=={'core','gs1','render','structured_append'} and unit['checks']==535,'Incomplete native unit groups');report['nativeUnits']=unit
-  for script,key,expected in [('render_parity_test','checks',153),('api_sa_smoke','checked',57),('gs1_native_test','checks',303),('render_budget_test','checks',9),('optimizer_hardening','checked',149),('api_type_fuzz','checked',615),('native_keys','checks',34),('diagnostics_keys','checked',50),('gs1_url_compatibility','checks',332)]:
+  for script,key,expected in [('render_parity_test','checks',153),('api_sa_smoke','checked',57),('gs1_native_test','checks',303),('render_budget_test','checks',9),('optimizer_hardening','checked',149),('api_type_fuzz','checked',615),('native_keys','checks',34),('diagnostics_keys','checked',50),('gs1_url_compatibility','checks',338)]:
    extra=strict_json(run(godot(ROOT/('tests/'+script+'.gd')),script));require(extra.get(key)==expected and extra.get('failures')==[],'Incomplete '+script+' checks');report[script]=extra
   bridge=ROOT/'script/bridge.gd' 
   for suite in ['public','internal']:

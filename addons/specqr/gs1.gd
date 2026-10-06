@@ -825,7 +825,7 @@ static func _url_path(value):
 	for i in range(value.length()):
 		var cp = value.unicode_at(i)
 		var character = value.substr(i, 1)
-		if cp <= 32 or cp >= 127 or cp in [34, 35, 60, 62, 63, 96, 123, 125]:
+		if cp <= 32 or cp >= 127 or cp in [34, 35, 60, 62, 63, 94, 96, 123, 125]:
 			for byte in character.to_utf8_buffer():
 				out.append("%%%02X" % byte)
 		else:

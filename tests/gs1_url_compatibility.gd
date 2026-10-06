@@ -32,6 +32,15 @@ func _init():
 	_check(GS1.normalize_gs1_digital_link(URI + "?foo=raw space") == URI + "?foo=raw+space", "raw query space preserved")
 	_check(GS1.parse_gs1_digital_link(URI + "/10/A B").elements[1].value == "A B", "raw path space preserved")
 	_check(GS1.create_gs1_digital_link(elements, {"baseUrl": "https://example.com/a b"}) == "https://example.com/a%20b/01/" + GTIN + "/10/ABC123?17=251231", "base path space encoded")
+	# Exact outputs independently reproduced from SpecQR TypeScript 16efc6c.
+	var primary_only = [{"ai": "01", "value": GTIN}]
+	var caret_uri = "https://example.com/a%5Eb/01/" + GTIN
+	_check(GS1.create_gs1_digital_link(primary_only, {"baseUrl": "https://example.com/a^b"}) == caret_uri, "base path caret encoded")
+	_check(GS1.create_gs1_digital_link(primary_only, {"baseUrl": "https://user:p@ss@example.com/a^b"}) == "https://user:p%40ss@example.com/a%5Eb/01/" + GTIN, "userinfo and base path caret encoded independently")
+	_check(GS1.create_gs1_digital_link(primary_only, {"baseUrl": "https://example.com/a%5Eb"}) == caret_uri, "base path caret escape preserved")
+	_check(GS1.normalize_gs1_digital_link("https://example.com/a^b/01/" + GTIN) == caret_uri, "normalized prefix caret encoded")
+	_check(GS1.normalize_gs1_digital_link(caret_uri) == caret_uri, "normalized caret escape is idempotent")
+	_check(GS1.normalize_gs1_digital_link(URI + "?x=a^b") == URI + "?x=a%5Eb", "query caret retains form encoding")
 	for dot in [".", "..", "%2e", "%2E%2e", ".%2E", "%2e."]:
 		for prefix in [URI + "/10/", "https:example.com/01/" + GTIN + "/10/", " https:\\example.com\\01\\" + GTIN + "\\10\\"]:
 			var value = GS1.parse_gs1_digital_link(prefix + dot)
