@@ -1,10 +1,12 @@
 # SpecQR GDScript
 
+A dependency-free QR Code Model 2 encoder implemented in GDScript for the standard Godot engine.
+
 Godot 標準エンジンで動く、依存パッケージ不要の QR コード生成ライブラリです。QR のビット列、GF(256)、Reed–Solomon、行列配置、マスク評価、SVG、PNG は GDScript でフルスクラッチ実装しています。外部 QR ライブラリ、JavaScript、FFI、GDExtension、エディタプラグインは使いません。
 
 **Godot は必須ランタイムです。** GDScript 単独の汎用インタプリタでは動きません。Godot 4.3 以上の標準版を対象とし、公式 Godot 4.3 と 4.7.2 の Linux x86-64 で検証します。.NET 版や C# は不要です。Windows/macOS、Web エクスポート、モバイルを実測済みとは扱いません。
 
-- QR Model 2、バージョン 1–40、ECC L/M/Q/H、全 8 マスクと自動選択
+- QR Code Model 2、バージョン 1–40、ECC L/M/Q/H、全 8 マスクと自動選択
 - 数字・英数字・バイト・漢字、混在セグメント最適化、ECI、FNC1 第一／第二位置
 - 行列を作らない事前計画、容量照会、マスク・色・印刷・読み取りリスク診断
 - GS1 要素文字列、50 AI、チェックディジット、Digital Link
@@ -64,7 +66,7 @@ GS1 / Digital Link は ASCII HTTP(S) の一般的な URL 補正に対応しま�
 ## ドキュメント
 
 - [日本語 Getting Started](docs/getting-started.md)
-- [English API reference](docs/reference.md)
+- [API リファレンス](docs/reference.md)
 - [GS1 / Digital Link の対応範囲](docs/gs1.md)
 - [検証・ランタイム・差分](docs/verification.md)
 - [別プロジェクトへのコピー例](examples/consumer_project/README.md)
