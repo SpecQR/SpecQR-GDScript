@@ -2,42 +2,42 @@
 
 ## Runtime versus development tools
 
-Runtime needs only the standard Godot engine, minimum 4.3. The validation lanes use official Linux x86-64 4.3 and current stable 4.7.2. Versions were checked against the [official archive](https://godotengine.org/download/archive/) and [Linux download page](https://godotengine.org/download/linux/). `script/install_godot.py` verifies official SHA512 release sums and pinned SHA256 binary/archive digests before running them. No downloaded QR encoder is part of the library.
+runtime に必要なのは標準 Godot engine だけで、最小版は 4.3 です。検証 lane は公式 Linux x86-64 の 4.3 と現行 stable の 4.7.2 を使います。版は [公式 archive](https://godotengine.org/download/archive/) と [Linux download page](https://godotengine.org/download/linux/) に照合しました。`script/install_godot.py` は、実行前に公式の SHA512 release sum と固定した SHA256 binary/archive digest を検証します。ダウンロードした QR encoder はライブラリに含めません。
 
-Python, a development-only ZXing-C++ wheel, Java ZXing and librsvg are independent test tools. Optional Perl/Nim/TypeScript oracle generators are development-only. None is needed by applications using `addons/specqr`.
+Python、開発専用の ZXing-C++ wheel、ZXing Java、librsvg は独立したテストツールです。任意の Perl/Nim/TypeScript oracle generator も開発専用です。`addons/specqr` を使うアプリケーションには、いずれも不要です。
 
 The initial public scope includes the encoding core, scratch SVG/PNG, exact RGBA pixels and native Godot Image. Local graphical display setup encountered a sandbox Unix-socket permission denial. Consequently no GPU readback is claimed or counted as a pass, and the optional Texture convenience adapter is not part of this initial public API. Native PNG decoding and Image byte equality remain required. Windows, macOS, mobile and Web export were not executed.
 
 ## Immutable and fail-closed gates
 
-`SOURCE-SHA256.json` names and hashes every public source file except itself and generated engine/Python metadata. Verification stages a fresh copy, checks the exact inventory before and after, and binds reports to source bytes, actual interpreter hash and subprocess transcripts. Source changes invalidate the gate. Every protocol process requires the exact response count, clean exit and zero stderr; no extra lines, parse warnings, late failures or leftover responses are accepted.
+`SOURCE-SHA256.json` は、それ自体と engine/Python が生成する metadata を除くすべての公開 source file の名前と hash を記録します。検証では新しいコピーを用意し、前後で正確なファイル一覧を確認して、レポートを source bytes、実際の interpreter hash、subprocess transcript に結び付けます。source の変更は gate を無効にします。すべての protocol process に、正確な response 数、正常終了、stderr が空であることを要求します。余分な行、parse warning、終了間際の失敗、残った response は受け入れません。
 
-The harness includes adversarial fake processes for extra output, nonzero final exit, stderr, malformed JSON, missing/oversized responses and timeouts. The JSON boundary is a strict bounded RFC8259 implementation: duplicate keys, malformed Unicode/UTF-8, nonfinite numbers and resource excess are rejected rather than delegated to Godot's permissive JSON behavior.
+harness は、余分な出力、最後の非ゼロ終了、stderr、不正 JSON、欠落・過大 response、timeout を起こす敵対的な fake process を含みます。JSON 境界は厳密で上限を設けた RFC8259 実装です。重複キー、不正な Unicode/UTF-8、非有限数、資源超過は、Godot の許容的な JSON 動作へ委譲せず拒否します。
 
-All coverage is retained:
+検証範囲はすべて維持します。
 
-- 5,610 public + 4,576 internal = **10,186** source-bound reference requests
-- Exact all **1,280** version/ECC/mask combinations and **4,320** raw construction cases
-- GF(256) table, Reed–Solomon degrees, capacity and optimizer cases, control segments, SA metadata/shuffle/parity
-- **1,411** GS1 corpus inputs, plus native strict URL/type/resource checks
-- All **102** cross-port regression vectors: FNC1 literal-percent/GS, capacity boundaries, Digital Link dot safety, DPI and ECC types
-- Native engine unit, render parity/max-budget, API/SA, GS1, malformed wire and CLI checks
-- Fresh separate-project import and real main-scene execution using only a copied addon, scratch PNG decoded by Godot, exact native Image RGBA bytes
-- Independent C++ and Java decoding of actual generated PNG pixels and independent Nayuki matrices; direct SVG rasterization and data-URL round-trips
+- 5,610 public + 4,576 internal = **10,186** 件の source に結び付いた参照 request
+- 正確な全 **1,280** 通りの version/ECC/mask の組合せと、**4,320** 件の raw construction case
+- GF(256) table、Reed–Solomon degree、容量と optimizer の case、control segment、SA metadata/shuffle/parity
+- **1,411** 件の GS1 corpus 入力と、native の厳密な URL/type/resource 検査
+- 全 **102** 件の cross-port regression vector: FNC1 の literal-percent/GS、容量境界、Digital Link の dot 安全性、DPI と ECC の型
+- native engine の unit、render parity/max-budget、API/SA、GS1、不正 wire、CLI の検査
+- コピーした addon だけを使う新しい別プロジェクトでの import と実際の main-scene 実行、Godot による自前 PNG の復号、native Image の正確な RGBA bytes
+- 実際に生成した PNG pixels と独立した Nayuki matrix に対する C++ と Java の独立 decode、SVG の直接 rasterization、data URL の往復変換
 
-See `verification/README.md` and each generated report for exact gate counts, pinned tool versions and commands. Baseline references are publicly reproducible synthetic fixtures, not private project/user data.
+正確な gate 件数、固定した tool version、コマンドは `verification/README.md` と各生成レポートを参照してください。baseline 参照は公開再現可能な合成 fixture であり、private なプロジェクトやユーザーのデータではありません。
 
 ## Explicit parity differences
 
 ### NUL in text
 
-Godot 4.3 cannot preserve String U+0000; 4.7.2 replaces it rather than preserving it. Passing through native JSON can also emit warnings. Exactly eight public text requests contain NUL. `verification/fixtures/godot-host-deltas.json` pins their indices and expected typed INVALID_INPUT results. They still execute. No matrix-equality assertion is made for these rejected text requests.
+Godot 4.3 は String の U+0000 を保持できず、4.7.2 は保持せずに置換します。native JSON を通すと警告が出る場合もあります。NUL を含む public text request は正確に 8 件です。`verification/fixtures/godot-host-deltas.json` は、それらの index と期待する型付き INVALID_INPUT 結果を固定します。これらも実行し、拒否した text request に対して行列一致は主張しません。
 
-Use byte Arrays/PackedByteArrays for NUL-containing data. Binary paths, including embedded zero, are separately proven lossless. The UTF-8 helper, CLI and strict wire boundary reject NUL text before host conversion. If an application has already asked Godot to create a modified String, the original lost character cannot be detected afterward.
+NUL を含むデータには byte Array/PackedByteArray を使ってください。埋込みゼロを含む binary 経路は、別途、損失なく保持することを確認します。UTF-8 helper、CLI、厳密な wire 境界は、host 変換前に NUL text を拒否します。アプリケーションが既に Godot に変更された String を作らせた場合、失われた元の文字を後から検出することはできません。
 
 ### GS1 profile
 
-The complete current-TypeScript oracle covers the same 1,411 historical inputs. This edition restores 77 formerly rejected input cases plus three IPv6 spellings, with exact positive assertions. The remaining 168 differences are 132 diagnostic-only cases, 34 intentional rejections (20 strict percent/UTF-8/NUL, 12 Unicode/IDNA hosts, two primary-context checks), and two safe dot-query builder acceptances. Each exception is pinned independently; no expectation is generated from the candidate. The 49 shared GS1 operations all remain, with 18 positive authority restorations and three explicit residual exceptions. See `docs/gs1.md`. Full WHATWG/UTS46 and comprehensive GS1 certification are not claimed.
+完全な現行 TypeScript oracle は、同じ過去入力 1,411 件を対象にします。この版では、以前に拒否した入力 77 件と IPv6 表記 3 件を、正確な受理結果の assertion によって復元します。残る差 168 件は、診断のみの 132 件、意図的な拒否 34 件（厳密な percent/UTF-8/NUL の 20 件、Unicode/IDNA host の 12 件、primary-context 検査 2 件）、安全な dot-query builder の受理 2 件です。各例外は独立に固定し、候補から期待値を生成しません。共有 GS1 操作 49 件もすべて残し、authority の受理復元 18 件と、残る明示的な例外 3 件を含みます。`docs/gs1.md` を参照してください。WHATWG/UTS46 全体や GS1 全体の認証は主張しません。
 
 ### Java default-scale detector characterization
 
@@ -45,11 +45,11 @@ The default PNG scale is 8. Actual PNGs at that scale are decoded and checked wi
 
 ### Host and CLI conventions
 
-Native booleans are strict Godot bools; Perl-specific flagged/tied/blessed scalar behavior is inapplicable. Expected errors are returned Dictionaries because GDScript has no language exceptions. CLI binary PNG requires `--output`; file arguments do not use `-` for stdin. The facade still provides the same substantive QR features.
+native boolean は厳密な Godot bool です。Perl 固有の flagged/tied/blessed scalar の動作は適用しません。GDScript には言語の例外がないため、想定されるエラーは Dictionary を返します。CLI の binary PNG には `--output` が必要で、file 引数は `-` を stdin に使いません。facade は実質的に同じ QR 機能を提供します。
 
 ## Local/CI execution
 
-Create a manifest only after reviewable source changes are complete:
+レビュー可能な source の変更が完了してから manifest を作成してください。
 
 ```sh
 python3 script/prepare_ci.py manifest
@@ -59,6 +59,6 @@ python3 /tmp/specqr-gdscript-stage/script/verify_native.py \
   --expect-version 4.3 --output /tmp/specqr-gdscript-evidence
 ```
 
-Use fresh output directories. The runners arrange writable task-local HOME/XDG directories for the engine, and use `--headless --no-header` for protocol stdout. Godot 4.3 `--quiet` suppresses script print output too, so it is used only for consumer scenes that write a separate report file. The CI workflow runs both official lanes and the independent decoder gates, then requires both to succeed.
+新しい出力 directory を使ってください。runner は、engine 用に書込み可能な task-local の HOME/XDG directory を用意し、protocol stdout には `--headless --no-header` を使います。Godot 4.3 の `--quiet` は script の print 出力も抑止するため、別のレポートファイルを書く consumer scene だけに使用します。CI workflow は公式の両 lane と独立 decoder gate を実行し、両方の成功を要求します。
 
-Publication completion requires the exact reviewed SHA on GitHub, successful required CI for that SHA, and fresh public consumer verification. A local partial run, a green test on an older SHA, a report without source bindings or a blocked platform check is not completion. GitHub source publication does not imply Asset Library, package-registry or tag/release publication.
+公開完了には、GitHub 上の正確なレビュー済み SHA、その SHA に対する必須 CI の成功、新しい public consumer 検証が必要です。ローカルの部分的な実行、古い SHA でのテスト成功、source への結び付けがないレポート、platform 検査が阻止された状態は完了ではありません。GitHub での source 公開は、Asset Library、package registry、tag/release の公開を意味しません。
